@@ -1,0 +1,2351 @@
+{
+  "users": [
+    {
+      "_id": "admin_demo_id",
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "passwordHash": "$2a$10$WCjwm1P9ZX9yZX2ffi12Q.HNVKU.IUiP/ZaqKnhGVTFxyFwVZl83m",
+      "role": "admin",
+      "createdAt": "2026-10-29T14:36:45.059Z",
+      "updatedAt": "2026-10-29T14:36:45.060Z"
+    },
+    {
+      "_id": "user_demo_id",
+      "name": "Demo Student",
+      "email": "demo@example.com",
+      "passwordHash": "$2a$10$Lf1xSRJK9OEevg9otL4ay.MQyrH24fmC/uD1ILEAgS3NMGrH09.aK",
+      "role": "user",
+      "createdAt": "2026-10-29T14:36:45.126Z",
+      "updatedAt": "2026-10-29T14:36:45.126Z"
+    },
+    {
+      "_id": "user_1793892854313",
+      "name": "Senior Test Engineer",
+      "email": "test_engineer_1793892854186@promptstudio.dev",
+      "passwordHash": "$2a$10$hX2TcQsmDCrVL6I29Mlr6elahlIfhr9EB7htQu9tNn00zLZNBTxau",
+      "role": "user",
+      "createdAt": "2026-11-05T15:34:14.313Z",
+      "updatedAt": "2026-11-05T15:34:14.313Z"
+    },
+    {
+      "_id": "user_1793892957475",
+      "name": "Senior Test Engineer",
+      "email": "test_engineer_1793892957353@promptstudio.dev",
+      "passwordHash": "$2a$10$qg2KpKhQMRfI63YZxsEIEO7g0UXtSuA/SbXxPwkBMo2TBAQHFaONS",
+      "role": "user",
+      "createdAt": "2026-11-05T15:35:57.475Z",
+      "updatedAt": "2026-11-05T15:35:57.475Z"
+    },
+    {
+      "_id": "user_1793892987764",
+      "name": "Senior Test Engineer",
+      "email": "test_engineer_1793892987655@promptstudio.dev",
+      "passwordHash": "$2a$10$eR/b.pF84uahBFm8IkZn1OBdeArgV9fnie/yYHjFtPFc7OOGkhTfq",
+      "role": "user",
+      "createdAt": "2026-11-05T15:36:27.764Z",
+      "updatedAt": "2026-11-05T15:36:27.764Z"
+    },
+    {
+      "_id": "user_1793893040664",
+      "name": "Senior Test Engineer",
+      "email": "test_engineer_1793893040526@promptstudio.dev",
+      "passwordHash": "$2a$10$e1jwjlxSio4HnXCdQmz1P.0JhaIdwIBhpjnD2Tcmb0Pv3RUquMkM2",
+      "role": "user",
+      "createdAt": "2026-11-05T15:37:20.664Z",
+      "updatedAt": "2026-11-05T15:37:20.664Z"
+    },
+    {
+      "_id": "user_1793985002224",
+      "name": "ravithreni",
+      "email": "gajalavangam@gmail.com",
+      "passwordHash": "$2a$10$0mQHpd0gtm7NVB62WANuKO8M8e/aVCIbiK5QFq5m.KB1NWrCb9UI2",
+      "role": "user",
+      "createdAt": "2026-11-06T17:10:02.224Z",
+      "updatedAt": "2026-11-06T17:10:02.224Z"
+    },
+    {
+      "_id": "user_1794024312098",
+      "name": "Srinidhi",
+      "email": "sri@gmail.com",
+      "passwordHash": "$2a$10$8tKfaTAkGnVLAvwMWUxZ0enciN8p3sRF0vn1SpzPWXnsqbQc2aXHy",
+      "role": "user",
+      "createdAt": "2026-11-07T04:05:12.098Z",
+      "updatedAt": "2026-11-07T04:05:12.098Z"
+    },
+    {
+      "_id": "user_1794026926555",
+      "name": "Ravithreni",
+      "email": "ravithreni@gmail.com",
+      "passwordHash": "$2a$10$vv/.xfAKduDOVhK7B5Q2.eZvKcFn229aAdWGNaqAnIgPcvaJlcefu",
+      "role": "user",
+      "createdAt": "2026-11-07T04:48:46.555Z",
+      "updatedAt": "2026-11-07T04:48:46.555Z"
+    }
+  ],
+  "collections": [
+    {
+      "_id": "col_1793893877051",
+      "userId": "admin_demo_id",
+      "name": "study",
+      "description": "",
+      "color": "#3b82f6",
+      "icon": "Folder",
+      "itemCount": 0,
+      "createdAt": "2026-11-05T15:51:17.051Z",
+      "updatedAt": "2026-11-05T15:51:17.051Z"
+    },
+    {
+      "_id": "col_1",
+      "userId": "user_demo_id",
+      "name": "Coding Prompts",
+      "description": "Software development, algorithms, and refactoring prompts",
+      "color": "#3b82f6",
+      "icon": "Code",
+      "createdAt": "2026-10-31T14:36:45.126Z"
+    },
+    {
+      "_id": "col_2",
+      "userId": "user_demo_id",
+      "name": "Study & Learning",
+      "description": "Educational summaries, quizzes, and course outlines",
+      "color": "#10b981",
+      "icon": "BookOpen",
+      "createdAt": "2026-10-31T14:36:45.126Z"
+    },
+    {
+      "_id": "col_3",
+      "userId": "user_demo_id",
+      "name": "Research Prompts",
+      "description": "Academic analysis and paper summaries",
+      "color": "#8b5cf6",
+      "icon": "Search",
+      "createdAt": "2026-11-01T14:36:45.126Z"
+    },
+    {
+      "_id": "col_4",
+      "userId": "user_demo_id",
+      "name": "Professional Writing",
+      "description": "Emails, proposals, and communication templates",
+      "color": "#f59e0b",
+      "icon": "PenTool",
+      "createdAt": "2026-11-02T14:36:45.126Z"
+    }
+  ],
+  "prompts": [
+    {
+      "_id": "p_1794030882013",
+      "userId": "user_1794026926555",
+      "title": "Explain core concepts",
+      "originalPrompt": "Explain machine learning to a beginner.",
+      "task": "Explain core concepts",
+      "context": "High school background",
+      "desiredOutputFormat": "Bulleted summary with analogy",
+      "tone": "Encouraging",
+      "targetAudience": "Beginners",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Explain machine learning to a beginner.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Explain machine learning to a beginner.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Beginners.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 60,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 11,
+            "context": 4,
+            "completeness": 15,
+            "structure": 12,
+            "overall": 60,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Explain machine learning to a beginner. clearly for Beginners, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 56,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 9,
+            "completeness": 15,
+            "structure": 8,
+            "overall": 56,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Explain machine learning to a beginner. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 70,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 12,
+            "completeness": 15,
+            "structure": 16,
+            "overall": 70,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Explain machine learning to a beginner.",
+      "technique": "Clear & Concise",
+      "responses": [],
+      "responseScores": {},
+      "recommendedPrompt": {},
+      "finalScore": 66,
+      "favorite": false,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-07T05:54:42.013Z",
+      "updatedAt": "2026-11-07T05:54:42.090Z"
+    },
+    {
+      "_id": "p_1794030529715",
+      "userId": "user_1794026926555",
+      "title": "Explain core concepts",
+      "originalPrompt": "Explain machine learning to a beginner.",
+      "task": "Explain core concepts",
+      "context": "High school background",
+      "desiredOutputFormat": "Bulleted summary with analogy",
+      "tone": "Encouraging",
+      "targetAudience": "Beginners",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Explain machine learning to a beginner.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Explain machine learning to a beginner.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Beginners.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 60,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 11,
+            "context": 4,
+            "completeness": 15,
+            "structure": 12,
+            "overall": 60,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Explain machine learning to a beginner. clearly for Beginners, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 56,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 9,
+            "completeness": 15,
+            "structure": 8,
+            "overall": 56,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Explain machine learning to a beginner. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 70,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 12,
+            "completeness": 15,
+            "structure": 16,
+            "overall": 70,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Explain machine learning to a beginner.",
+      "technique": "Clear & Concise",
+      "responses": [],
+      "responseScores": {},
+      "recommendedPrompt": {},
+      "finalScore": 66,
+      "favorite": false,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-07T05:48:49.715Z",
+      "updatedAt": "2026-11-07T05:48:49.804Z"
+    },
+    {
+      "_id": "p_1794029996211",
+      "userId": "user_1794026926555",
+      "title": "Write array sorting function",
+      "originalPrompt": "Write a Python function to sort an array.",
+      "task": "Write array sorting function",
+      "context": "Python 3.10 standards",
+      "desiredOutputFormat": "Code block with type hints & assertions",
+      "tone": "Technical",
+      "targetAudience": "Developers",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Write a Python function to sort an array.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Write a Python function to sort an array.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Developers.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 58,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 14,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 58,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Write a Python function to sort an array. clearly for Developers, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 54,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 9,
+            "completeness": 10,
+            "structure": 8,
+            "overall": 54,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Write a Python function to sort an array. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nWrite a Python function to sort an array.\n\n# Context & Target\nPython 3.10 standards for Developers\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 64,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 7,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 64,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Write a Python function to sort an array.",
+      "technique": "Original Prompt",
+      "responses": [
+        {
+          "responseText": "[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n\"Write a Python function to sort an array.\"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.",
+          "model": "gemini-2.5-flash (Demo / Key Required)",
+          "timestamp": "2026-11-07T05:40:48.676Z",
+          "isDemo": true,
+          "scores": {
+            "relevance": 20,
+            "completeness": 13,
+            "clarity": 20,
+            "structure": 17,
+            "instructionFollowing": 10,
+            "overall": 80
+          },
+          "technique": "Original Prompt",
+          "promptText": "Write a Python function to sort an array."
+        }
+      ],
+      "responseScores": {
+        "relevance": 20,
+        "completeness": 13,
+        "clarity": 20,
+        "structure": 17,
+        "instructionFollowing": 10,
+        "overall": 80
+      },
+      "recommendedPrompt": {
+        "technique": "Step-by-Step",
+        "promptText": "Break down Write a Python function to sort an array. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+        "promptScore": 61,
+        "responseScore": 77,
+        "finalScore": 70.6,
+        "rationale": [
+          "Highest combined heuristic score (70.6/100).",
+          "Prompt Quality Score: 61/100 (Step-by-Step).",
+          "Response Quality Score: 77/100.",
+          "Demonstrated superior instruction following and clarity in output formatting."
+        ]
+      },
+      "finalScore": 70.6,
+      "favorite": false,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-07T05:39:56.211Z",
+      "updatedAt": "2026-11-07T05:40:48.774Z"
+    },
+    {
+      "_id": "p_1793985026083",
+      "userId": "user_1793985002224",
+      "title": "Explain core concepts",
+      "originalPrompt": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+      "task": "Explain core concepts",
+      "context": "High school background",
+      "desiredOutputFormat": "Bulleted summary with analogy",
+      "tone": "Encouraging",
+      "targetAudience": "Beginners",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Explain machine learning to a beginner.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Explain machine learning to a beginner.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Beginners.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 60,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 11,
+            "context": 4,
+            "completeness": 15,
+            "structure": 12,
+            "overall": 60,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Explain machine learning to a beginner. clearly for Beginners, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 56,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 9,
+            "completeness": 15,
+            "structure": 8,
+            "overall": 56,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Explain machine learning to a beginner. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 70,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 12,
+            "completeness": 15,
+            "structure": 16,
+            "overall": 70,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+      "technique": "Clear & Concise",
+      "responses": [
+        {
+          "responseText": "[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n\"Explain machine learning to a beginner.\"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.",
+          "model": "gemini-2.5-flash (Demo / Key Required)",
+          "timestamp": "2026-11-06T17:10:34.587Z",
+          "isDemo": true,
+          "scores": {
+            "relevance": 20,
+            "completeness": 13,
+            "clarity": 20,
+            "structure": 17,
+            "instructionFollowing": 10,
+            "overall": 80
+          },
+          "technique": "Original Prompt",
+          "promptText": "Explain machine learning to a beginner."
+        }
+      ],
+      "responseScores": {
+        "relevance": 20,
+        "completeness": 13,
+        "clarity": 20,
+        "structure": 17,
+        "instructionFollowing": 10,
+        "overall": 80
+      },
+      "recommendedPrompt": {
+        "technique": "Structured",
+        "promptText": "# Task\nExplain machine learning to a beginner.\n\n# Context & Target\nHigh school background for Beginners\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+        "promptScore": 70,
+        "responseScore": 73,
+        "finalScore": 71.8,
+        "rationale": [
+          "Highest combined heuristic score (71.8/100).",
+          "Prompt Quality Score: 70/100 (Structured).",
+          "Response Quality Score: 73/100.",
+          "Demonstrated superior instruction following and clarity in output formatting."
+        ]
+      },
+      "finalScore": 71.8,
+      "favorite": false,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-06T17:10:26.083Z",
+      "updatedAt": "2026-11-06T17:10:57.246Z"
+    },
+    {
+      "_id": "p_1793893945863",
+      "userId": "admin_demo_id",
+      "title": "i want to learn fashion design",
+      "originalPrompt": "i want to learn fashion design",
+      "task": "",
+      "context": "",
+      "desiredOutputFormat": "",
+      "tone": "Standard",
+      "targetAudience": "General",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 11,
+        "specificity": 6,
+        "context": 4,
+        "completeness": 11,
+        "structure": 8,
+        "overall": 40,
+        "suggestions": [
+          "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+          "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: i want to learn fashion design. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 42,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 6,
+            "structure": 12,
+            "overall": 42,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: i want to learn fashion design. Include key concepts, practical real-world examples, potential challenges, and actionable insights for General.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 47,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 11,
+            "context": 4,
+            "completeness": 6,
+            "structure": 12,
+            "overall": 47,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain i want to learn fashion design clearly for General, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 51,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 9,
+            "completeness": 10,
+            "structure": 8,
+            "overall": 51,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down i want to learn fashion design into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 53,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 6,
+            "structure": 16,
+            "overall": 53,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\ni want to learn fashion design\n\n# Context & Target\nGeneral domain context for General\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 52,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 9,
+            "context": 7,
+            "completeness": 6,
+            "structure": 16,
+            "overall": 52,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "i want to learn fashion design",
+      "technique": "Original Prompt",
+      "responses": [
+        {
+          "responseText": "[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n\"i want to learn fashion design\"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.",
+          "model": "gemini-2.5-flash (Demo / Key Required)",
+          "timestamp": "2026-11-05T15:52:42.972Z",
+          "isDemo": true,
+          "scores": {
+            "relevance": 20,
+            "completeness": 13,
+            "clarity": 20,
+            "structure": 17,
+            "instructionFollowing": 10,
+            "overall": 80
+          },
+          "technique": "Original Prompt",
+          "promptText": "i want to learn fashion design"
+        }
+      ],
+      "responseScores": {
+        "relevance": 20,
+        "completeness": 13,
+        "clarity": 20,
+        "structure": 17,
+        "instructionFollowing": 10,
+        "overall": 80
+      },
+      "recommendedPrompt": {
+        "technique": "Step-by-Step",
+        "promptText": "Break down i want to learn fashion design into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+        "promptScore": 53,
+        "responseScore": 77,
+        "finalScore": 67.4,
+        "rationale": [
+          "Highest combined heuristic score (67.4/100).",
+          "Prompt Quality Score: 53/100 (Step-by-Step).",
+          "Response Quality Score: 77/100.",
+          "Demonstrated superior instruction following and clarity in output formatting."
+        ]
+      },
+      "finalScore": 67.4,
+      "favorite": false,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-05T15:52:25.863Z",
+      "updatedAt": "2026-11-05T15:52:43.070Z"
+    },
+    {
+      "_id": "p_1793893866795",
+      "userId": "admin_demo_id",
+      "title": "4-week learning roadmap",
+      "originalPrompt": "Create a study plan for learning SQL.",
+      "task": "4-week learning roadmap",
+      "context": "Data analysis career path",
+      "desiredOutputFormat": "Weekly schedule table",
+      "tone": "Structured",
+      "targetAudience": "Students",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Create a study plan for learning SQL.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Create a study plan for learning SQL.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Students.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 60,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 11,
+            "context": 4,
+            "completeness": 15,
+            "structure": 12,
+            "overall": 60,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Create a study plan for learning SQL. clearly for Students, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 56,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 9,
+            "completeness": 15,
+            "structure": 8,
+            "overall": 56,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Create a study plan for learning SQL. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nCreate a study plan for learning SQL.\n\n# Context & Target\nData analysis career path for Students\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 65,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 7,
+            "completeness": 15,
+            "structure": 16,
+            "overall": 65,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Create a study plan for learning SQL.",
+      "technique": "Clear & Concise",
+      "responses": [],
+      "responseScores": {},
+      "recommendedPrompt": {},
+      "finalScore": 61,
+      "favorite": true,
+      "collectionId": "col_1793893877051",
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-05T15:51:06.795Z",
+      "updatedAt": "2026-11-05T15:51:56.431Z"
+    },
+    {
+      "_id": "p_1793893842206",
+      "userId": "admin_demo_id",
+      "title": "Write array sorting function",
+      "originalPrompt": "Write a Python function to sort an array.",
+      "task": "Write array sorting function",
+      "context": "Python 3.10 standards",
+      "desiredOutputFormat": "Code block with type hints & assertions",
+      "tone": "Technical",
+      "targetAudience": "Developers",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Write a Python function to sort an array.. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Write a Python function to sort an array.. Include key concepts, practical real-world examples, potential challenges, and actionable insights for Developers.",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 58,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 14,
+            "context": 4,
+            "completeness": 10,
+            "structure": 12,
+            "overall": 58,
+            "suggestions": [
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Write a Python function to sort an array. clearly for Developers, utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 54,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 9,
+            "completeness": 10,
+            "structure": 8,
+            "overall": 54,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Write a Python function to sort an array. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 61,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 61,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nWrite a Python function to sort an array.\n\n# Context & Target\nPython 3.10 standards for Developers\n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 64,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 13,
+            "context": 7,
+            "completeness": 10,
+            "structure": 16,
+            "overall": 64,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Write a Python function to sort an array.",
+      "technique": "Original Prompt",
+      "responses": [
+        {
+          "responseText": "[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n\"Write a Python function to sort an array.\"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.",
+          "model": "gemini-2.5-flash (Demo / Key Required)",
+          "timestamp": "2026-11-05T15:50:47.796Z",
+          "isDemo": true,
+          "scores": {
+            "relevance": 20,
+            "completeness": 13,
+            "clarity": 20,
+            "structure": 17,
+            "instructionFollowing": 10,
+            "overall": 80
+          },
+          "technique": "Original Prompt",
+          "promptText": "Write a Python function to sort an array."
+        }
+      ],
+      "responseScores": {
+        "relevance": 20,
+        "completeness": 13,
+        "clarity": 20,
+        "structure": 17,
+        "instructionFollowing": 10,
+        "overall": 80
+      },
+      "recommendedPrompt": {
+        "technique": "Step-by-Step",
+        "promptText": "Break down Write a Python function to sort an array. into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+        "promptScore": 61,
+        "responseScore": 77,
+        "finalScore": 70.6,
+        "rationale": [
+          "Highest combined heuristic score (70.6/100).",
+          "Prompt Quality Score: 61/100 (Step-by-Step).",
+          "Response Quality Score: 77/100.",
+          "Demonstrated superior instruction following and clarity in output formatting."
+        ]
+      },
+      "finalScore": 70.6,
+      "favorite": false,
+      "collectionId": "col_1793893877051",
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-05T15:50:42.206Z",
+      "updatedAt": "2026-11-05T15:51:35.780Z"
+    },
+    {
+      "_id": "p_1793893040791",
+      "userId": "user_1793893040664",
+      "title": "Resilient Microservices Retry Mechanism",
+      "originalPrompt": "Design a resilient microservices retry mechanism with exponential backoff and jitter",
+      "task": "Design a resilient microservices retry mechanism with exponential backoff and jitter",
+      "context": "Distributed financial system handling 10k TPS with payment gateways",
+      "desiredOutputFormat": "JSON configuration schema with architecture notes",
+      "tone": "Standard",
+      "targetAudience": "General",
+      "creativityLevel": "Balanced",
+      "promptScores": {
+        "clarity": 14,
+        "specificity": 9,
+        "context": 4,
+        "completeness": 11,
+        "structure": 12,
+        "overall": 50,
+        "suggestions": [
+          "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+          "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Clear & Concise",
+          "optimizedPrompt": "Direct Request: Design a resilient microservices retry mechanism with exponential backoff and jitter. Provide a succinct and precise answer.",
+          "why": "Eliminates ambiguities and focuses strictly on the core directive.",
+          "expectedUseCase": "Quick lookups, mobile queries, or token-constrained requests.",
+          "promptScore": 42,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 6,
+            "context": 4,
+            "completeness": 6,
+            "structure": 12,
+            "overall": 42,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Detailed",
+          "optimizedPrompt": "Provide an in-depth analysis of: Design a resilient microservices retry mechanism with exponential backoff and jitter. Include key concepts, practical real-world examples, potential challenges, and actionable insights .",
+          "why": "Adds comprehensive constraints and domain depth.",
+          "expectedUseCase": "Technical documentation, deep learning, or research projects.",
+          "promptScore": 50,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 14,
+            "context": 4,
+            "completeness": 6,
+            "structure": 12,
+            "overall": 50,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a Senior Domain Expert. Explain Design a resilient microservices retry mechanism with exponential backoff and jitter clearly , utilizing industry standard terminology while keeping concepts accessible.",
+          "why": "Engages persona framing for specialized expertise and appropriate tone.",
+          "expectedUseCase": "Expert consultations, educational tutorials, or professional advisory.",
+          "promptScore": 54,
+          "promptScores": {
+            "clarity": 18,
+            "specificity": 9,
+            "context": 9,
+            "completeness": 10,
+            "structure": 8,
+            "overall": 54,
+            "suggestions": [
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Break down Design a resilient microservices retry mechanism with exponential backoff and jitter into sequential steps:\nStep 1: Core definition and principles.\nStep 2: Key components and workflow.\nStep 3: Implementation or practical usage.\nStep 4: Summary of best practices.",
+          "why": "Guides the model through logical reasoning before providing answers.",
+          "expectedUseCase": "Complex problem-solving, tutorials, or algorithm walkthroughs.",
+          "promptScore": 53,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 13,
+            "context": 4,
+            "completeness": 6,
+            "structure": 16,
+            "overall": 53,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        },
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "# Task\nDesign a resilient microservices retry mechanism with exponential backoff and jitter\n\n# Context & Target\nDistributed financial system handling 10k TPS with payment gateways \n\n# Desired Output\nStructure as:\n- Overview\n- Key Takeaways\n- Examples",
+          "why": "Uses visual delimiters (headers & bullets) to enforce strict schema structure.",
+          "expectedUseCase": "Executive summaries, reports, or automated data parsing.",
+          "promptScore": 52,
+          "promptScores": {
+            "clarity": 14,
+            "specificity": 9,
+            "context": 7,
+            "completeness": 6,
+            "structure": 16,
+            "overall": 52,
+            "suggestions": [
+              "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+              "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+              "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+              "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema).",
+              "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+            ]
+          }
+        }
+      ],
+      "selectedPrompt": "Design a resilient microservices retry mechanism with exponential backoff and jitter",
+      "technique": "Clear & Concise",
+      "responses": [
+        {
+          "technique": "Clear & Concise",
+          "responseText": "[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n\"Direct Request: Design a resilient microservices retry mechanism with exponential backoff and jitter. Provide a succinct and precise answer.\"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.",
+          "scores": {
+            "relevance": 20,
+            "completeness": 13,
+            "clarity": 15,
+            "structure": 17,
+            "instructionFollowing": 10,
+            "overall": 75
+          }
+        }
+      ],
+      "responseScores": {},
+      "recommendedPrompt": {
+        "technique": "Clear & Concise",
+        "promptText": "Direct Request: Design a resilient microservices retry mechanism with exponential backoff and jitter. Provide a succinct and precise answer.",
+        "promptScore": 42,
+        "responseScore": 75,
+        "finalScore": 61.8,
+        "rationale": [
+          "Highest combined heuristic score (61.8/100).",
+          "Prompt Quality Score: 42/100 (Clear & Concise).",
+          "Response Quality Score: 75/100.",
+          "Demonstrated superior instruction following and clarity in output formatting."
+        ]
+      },
+      "finalScore": 62,
+      "favorite": true,
+      "collectionId": null,
+      "tags": [],
+      "version": 1,
+      "createdAt": "2026-11-05T15:37:20.791Z",
+      "updatedAt": "2026-11-05T15:37:20.824Z"
+    },
+    {
+      "_id": "p_seed_1",
+      "userId": "user_demo_id",
+      "title": "Explain Machine Learning to Beginner",
+      "originalPrompt": "Explain machine learning to a beginner.",
+      "task": "Explain ML concepts simply",
+      "context": "High school student background",
+      "desiredOutputFormat": "Bulleted summary with real world analogy",
+      "tone": "Encouraging",
+      "targetAudience": "Beginners",
+      "creativityLevel": "Balanced",
+      "collectionId": "col_2",
+      "favorite": true,
+      "technique": "Role-Based",
+      "promptScores": {
+        "clarity": 16,
+        "specificity": 14,
+        "context": 15,
+        "completeness": 17,
+        "structure": 16,
+        "overall": 78,
+        "suggestions": [
+          "Specify target output format in detail."
+        ]
+      },
+      "variations": [
+        {
+          "technique": "Role-Based",
+          "optimizedPrompt": "Act as a friendly computer science professor. Explain the core concept of machine learning to a high-school student using the analogy of learning to ride a bicycle.",
+          "why": "Assigns an expert teacher persona and engaging visual analogy.",
+          "expectedUseCase": "Tutorials and educational overviews."
+        },
+        {
+          "technique": "Step-by-Step",
+          "optimizedPrompt": "Explain machine learning in 4 clear steps:\n1. Data training\n2. Pattern recognition\n3. Prediction\n4. Real-world example.",
+          "why": "Organizes complex concepts into structured sequence.",
+          "expectedUseCase": "Structured learning guides."
+        }
+      ],
+      "selectedPrompt": "Act as a friendly computer science professor. Explain the core concept of machine learning...",
+      "responses": [
+        {
+          "technique": "Role-Based",
+          "promptText": "Act as a friendly computer science professor...",
+          "responseText": "Machine learning works like learning to ride a bicycle. With practice data, the computer learns patterns and improves automatically over time!",
+          "model": "gemini-2.5-flash",
+          "scores": {
+            "relevance": 19,
+            "completeness": 18,
+            "clarity": 19,
+            "structure": 18,
+            "instructionFollowing": 18,
+            "overall": 92
+          },
+          "timestamp": "2026-11-02T14:36:45.126Z"
+        }
+      ],
+      "responseScores": {
+        "relevance": 19,
+        "completeness": 18,
+        "clarity": 19,
+        "structure": 18,
+        "instructionFollowing": 18,
+        "overall": 92
+      },
+      "recommendedPrompt": {
+        "technique": "Role-Based",
+        "promptText": "Act as a friendly computer science professor...",
+        "promptScore": 88,
+        "responseScore": 92,
+        "finalScore": 90.4,
+        "rationale": [
+          "Highest overall score",
+          "Strong persona alignment"
+        ]
+      },
+      "finalScore": 90.4,
+      "version": 1,
+      "tags": [
+        "machine-learning",
+        "education"
+      ],
+      "createdAt": "2026-11-02T14:36:45.126Z",
+      "updatedAt": "2026-11-02T14:36:45.126Z"
+    },
+    {
+      "_id": "p_seed_2",
+      "userId": "user_demo_id",
+      "title": "Python Array Sorting Function",
+      "originalPrompt": "Write a Python function to sort an array.",
+      "task": "Write array sorting function",
+      "context": "Python 3.10 clean code standards",
+      "desiredOutputFormat": "Code block with docstring and unit test",
+      "tone": "Technical",
+      "targetAudience": "Developers",
+      "collectionId": "col_1",
+      "favorite": true,
+      "technique": "Structured",
+      "promptScores": {
+        "clarity": 18,
+        "specificity": 15,
+        "context": 14,
+        "completeness": 16,
+        "structure": 18,
+        "overall": 81
+      },
+      "variations": [
+        {
+          "technique": "Structured",
+          "optimizedPrompt": "Write a Python 3 function named `custom_sort(arr)` that sorts a list of numbers in ascending order. Include type hints, docstring, and 2 unit test assertions.",
+          "why": "Explicitly defines function name and test assertions.",
+          "expectedUseCase": "Coding interview prep."
+        }
+      ],
+      "selectedPrompt": "Write a Python 3 function named custom_sort...",
+      "responses": [
+        {
+          "technique": "Structured",
+          "promptText": "Write a Python 3 function named custom_sort...",
+          "responseText": "```python\ndef custom_sort(arr):\n    return sorted(arr)\n\nassert custom_sort([3,1,2]) == [1,2,3]\nprint(\"Tests Passed!\")\n```",
+          "model": "gemini-2.5-flash",
+          "scores": {
+            "relevance": 20,
+            "completeness": 19,
+            "clarity": 19,
+            "structure": 20,
+            "instructionFollowing": 20,
+            "overall": 98
+          },
+          "timestamp": "2026-11-03T14:36:45.126Z"
+        }
+      ],
+      "responseScores": {
+        "relevance": 20,
+        "completeness": 19,
+        "clarity": 19,
+        "structure": 20,
+        "instructionFollowing": 20,
+        "overall": 98
+      },
+      "recommendedPrompt": {
+        "technique": "Structured",
+        "promptText": "Write a Python 3 function named custom_sort...",
+        "promptScore": 88,
+        "responseScore": 98,
+        "finalScore": 94,
+        "rationale": [
+          "Perfect code syntax and test assertions"
+        ]
+      },
+      "finalScore": 94,
+      "version": 1,
+      "tags": [
+        "python",
+        "algorithms"
+      ],
+      "createdAt": "2026-11-03T14:36:45.126Z",
+      "updatedAt": "2026-11-03T14:36:45.126Z"
+    },
+    {
+      "_id": "p_seed_3",
+      "userId": "user_demo_id",
+      "title": "SQL Study Plan",
+      "originalPrompt": "Create a study plan for learning SQL.",
+      "task": "Develop 4-week SQL curriculum",
+      "context": "Data analysis career path",
+      "desiredOutputFormat": "Weekly schedule table",
+      "tone": "Structured",
+      "targetAudience": "Beginners",
+      "collectionId": "col_2",
+      "favorite": false,
+      "technique": "Step-by-Step",
+      "promptScores": {
+        "clarity": 17,
+        "specificity": 16,
+        "context": 15,
+        "completeness": 17,
+        "structure": 17,
+        "overall": 82
+      },
+      "variations": [],
+      "responses": [],
+      "responseScores": {
+        "relevance": 0,
+        "completeness": 0,
+        "clarity": 0,
+        "structure": 0,
+        "instructionFollowing": 0,
+        "overall": 0
+      },
+      "finalScore": 82,
+      "version": 1,
+      "tags": [
+        "sql",
+        "database"
+      ],
+      "createdAt": "2026-11-04T14:36:45.126Z",
+      "updatedAt": "2026-11-04T14:36:45.126Z"
+    },
+    {
+      "_id": "p_seed_4",
+      "userId": "user_demo_id",
+      "title": "Professional Leave Request Email",
+      "originalPrompt": "Write a professional email requesting leave.",
+      "task": "Request 3-day personal leave",
+      "context": "Corporate engineering team",
+      "desiredOutputFormat": "Email subject and body",
+      "tone": "Professional & Polite",
+      "targetAudience": "Engineering Manager",
+      "collectionId": "col_4",
+      "favorite": true,
+      "technique": "Clear & Concise",
+      "promptScores": {
+        "clarity": 18,
+        "specificity": 17,
+        "context": 16,
+        "completeness": 18,
+        "structure": 18,
+        "overall": 87
+      },
+      "variations": [],
+      "responses": [],
+      "responseScores": {
+        "relevance": 0,
+        "completeness": 0,
+        "clarity": 0,
+        "structure": 0,
+        "instructionFollowing": 0,
+        "overall": 0
+      },
+      "finalScore": 87,
+      "version": 1,
+      "tags": [
+        "email",
+        "workplace"
+      ],
+      "createdAt": "2026-11-05T14:36:45.126Z",
+      "updatedAt": "2026-11-05T14:36:45.126Z"
+    }
+  ],
+  "versions": [
+    {
+      "_id": "ver_1793893040791",
+      "promptId": "p_1793893040791",
+      "versionNumber": 1,
+      "promptText": "Design a resilient microservices retry mechanism with exponential backoff and jitter",
+      "technique": "Clear & Concise",
+      "promptScores": {
+        "clarity": 14,
+        "specificity": 9,
+        "context": 4,
+        "completeness": 11,
+        "structure": 12,
+        "overall": 50,
+        "suggestions": [
+          "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+          "Define the target audience (e.g., \"for beginners\", \"for C-level executives\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-05T15:37:20.791Z"
+    },
+    {
+      "_id": "ver_1793893842206",
+      "promptId": "p_1793893842206",
+      "versionNumber": 1,
+      "promptText": "Write a Python function to sort an array.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-05T15:50:42.206Z"
+    },
+    {
+      "_id": "ver_1793893866795",
+      "promptId": "p_1793893866795",
+      "versionNumber": 1,
+      "promptText": "Create a study plan for learning SQL.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-05T15:51:06.795Z"
+    },
+    {
+      "_id": "ver_1793893945863",
+      "promptId": "p_1793893945863",
+      "versionNumber": 1,
+      "promptText": "i want to learn fashion design",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 11,
+        "specificity": 6,
+        "context": 4,
+        "completeness": 11,
+        "structure": 8,
+        "overall": 40,
+        "suggestions": [
+          "Use strong action verbs (e.g. \"Explain\", \"Analyze\", \"Generate\") at the start of your prompt.",
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\").",
+          "Specify the desired output format (e.g., Markdown table, bulleted list, JSON schema)."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-05T15:52:25.863Z"
+    },
+    {
+      "_id": "ver_1793985026083",
+      "promptId": "p_1793985026083",
+      "versionNumber": 1,
+      "promptText": "Explain machine learning to a beginner.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-06T17:10:26.083Z"
+    },
+    {
+      "_id": "ver_1794029996211",
+      "promptId": "p_1794029996211",
+      "versionNumber": 1,
+      "promptText": "Write a Python function to sort an array.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 12,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 61,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\").",
+          "Provide background context or define the role/persona for the AI (e.g., \"Act as a Senior Developer\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-07T05:39:56.211Z"
+    },
+    {
+      "_id": "ver_1794030529715",
+      "promptId": "p_1794030529715",
+      "versionNumber": 1,
+      "promptText": "Explain machine learning to a beginner.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-07T05:48:49.715Z"
+    },
+    {
+      "_id": "ver_1794030882013",
+      "promptId": "p_1794030882013",
+      "versionNumber": 1,
+      "promptText": "Explain machine learning to a beginner.",
+      "technique": "Standard",
+      "promptScores": {
+        "clarity": 15,
+        "specificity": 6,
+        "context": 17,
+        "completeness": 20,
+        "structure": 8,
+        "overall": 66,
+        "suggestions": [
+          "Add specific guidelines or constraints (e.g., \"Limit to 3 paragraphs\", \"Do not use technical jargon\")."
+        ]
+      },
+      "changeSummary": "Initial prompt creation",
+      "createdAt": "2026-11-07T05:54:42.013Z"
+    }
+  ],
+  "activities": [
+    {
+      "_id": "act_1794030882013_0w0q",
+      "userId": "user_1794026926555",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Explain core concepts\"",
+      "metadata": {},
+      "createdAt": "2026-11-07T05:54:42.013Z"
+    },
+    {
+      "_id": "act_1794030529715_8wzo",
+      "userId": "user_1794026926555",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Explain core concepts\"",
+      "metadata": {},
+      "createdAt": "2026-11-07T05:48:49.715Z"
+    },
+    {
+      "_id": "act_1794029996211_a7bj",
+      "userId": "user_1794026926555",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Write array sorting function\"",
+      "metadata": {},
+      "createdAt": "2026-11-07T05:39:56.211Z"
+    },
+    {
+      "_id": "act_1794026926555_nymq",
+      "userId": "user_1794026926555",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (ravithreni@gmail.com)",
+      "metadata": {},
+      "createdAt": "2026-11-07T04:48:46.555Z"
+    },
+    {
+      "_id": "act_1794024312099_7d32",
+      "userId": "user_1794024312098",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (sri@gmail.com)",
+      "metadata": {},
+      "createdAt": "2026-11-07T04:05:12.099Z"
+    },
+    {
+      "_id": "act_1793985026083_qzf6",
+      "userId": "user_1793985002224",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Explain core concepts\"",
+      "metadata": {},
+      "createdAt": "2026-11-06T17:10:26.083Z"
+    },
+    {
+      "_id": "act_1793985002224_v267",
+      "userId": "user_1793985002224",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (gajalavangam@gmail.com)",
+      "metadata": {},
+      "createdAt": "2026-11-06T17:10:02.224Z"
+    },
+    {
+      "_id": "act_1793893945863_v9hh",
+      "userId": "admin_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"i want to learn fashion design\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:52:25.863Z"
+    },
+    {
+      "_id": "act_1793893916431_ymsm",
+      "userId": "admin_demo_id",
+      "type": "TOGGLE_FAVORITE",
+      "description": "Starred prompt \"4-week learning roadmap\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:51:56.431Z"
+    },
+    {
+      "_id": "act_1793893895780_vfsm",
+      "userId": "admin_demo_id",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"study\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:51:35.780Z"
+    },
+    {
+      "_id": "act_1793893893712_foqo",
+      "userId": "admin_demo_id",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"study\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:51:33.712Z"
+    },
+    {
+      "_id": "act_1793893877051_w9b5",
+      "userId": "admin_demo_id",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"study\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:51:17.051Z"
+    },
+    {
+      "_id": "act_1793893866795_xwq3",
+      "userId": "admin_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"4-week learning roadmap\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:51:06.795Z"
+    },
+    {
+      "_id": "act_1793893842206_6ug4",
+      "userId": "admin_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Write array sorting function\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:50:42.206Z"
+    },
+    {
+      "_id": "act_1793893040939_jfeb",
+      "userId": "user_1793893040664",
+      "type": "USER_LOGIN",
+      "description": "User logged in (test_engineer_1793893040526@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.939Z"
+    },
+    {
+      "_id": "act_1793893040829_d1lk",
+      "userId": "user_1793893040664",
+      "type": "DELETE_COLLECTION",
+      "description": "Deleted collection \"Financial Microservices Resiliency (Updated)\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.829Z"
+    },
+    {
+      "_id": "act_1793893040824_0mhl",
+      "userId": "user_1793893040664",
+      "type": "REMOVE_FROM_COLLECTION",
+      "description": "Removed prompt from \"Financial Microservices Resiliency (Updated)\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.824Z"
+    },
+    {
+      "_id": "act_1793893040820_akc1",
+      "userId": "user_1793893040664",
+      "type": "UPDATE_COLLECTION",
+      "description": "Updated collection \"Financial Microservices Resiliency (Updated)\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.820Z"
+    },
+    {
+      "_id": "act_1793893040813_95ub",
+      "userId": "user_1793893040664",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"Financial Microservices\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.813Z"
+    },
+    {
+      "_id": "act_1793893040809_wl5n",
+      "userId": "user_1793893040664",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"Financial Microservices\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.809Z"
+    },
+    {
+      "_id": "act_1793893040802_ni2q",
+      "userId": "user_1793893040664",
+      "type": "TOGGLE_FAVORITE",
+      "description": "Starred prompt \"Resilient Microservices Retry Mechanism\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.802Z"
+    },
+    {
+      "_id": "act_1793893040791_12yp",
+      "userId": "user_1793893040664",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Resilient Microservices Retry Mechanism\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.791Z"
+    },
+    {
+      "_id": "act_1793893040774_x5bp",
+      "userId": "user_1793893040664",
+      "type": "USER_LOGIN",
+      "description": "User logged in (test_engineer_1793893040526@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.774Z"
+    },
+    {
+      "_id": "act_1793893040664_8pak",
+      "userId": "user_1793893040664",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (test_engineer_1793893040526@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:37:20.664Z"
+    },
+    {
+      "_id": "act_1793892987853_nfr6",
+      "userId": "user_1793892987764",
+      "type": "USER_LOGIN",
+      "description": "User logged in (test_engineer_1793892987655@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:36:27.853Z"
+    },
+    {
+      "_id": "act_1793892987764_dax8",
+      "userId": "user_1793892987764",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (test_engineer_1793892987655@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:36:27.764Z"
+    },
+    {
+      "_id": "act_1793892957563_tr5u",
+      "userId": "user_1793892957475",
+      "type": "USER_LOGIN",
+      "description": "User logged in (test_engineer_1793892957353@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:35:57.563Z"
+    },
+    {
+      "_id": "act_1793892957475_99q4",
+      "userId": "user_1793892957475",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (test_engineer_1793892957353@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:35:57.475Z"
+    },
+    {
+      "_id": "act_1793892854404_b697",
+      "userId": "user_1793892854313",
+      "type": "USER_LOGIN",
+      "description": "User logged in (test_engineer_1793892854186@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:34:14.404Z"
+    },
+    {
+      "_id": "act_1793892854313_6ady",
+      "userId": "user_1793892854313",
+      "type": "USER_REGISTER",
+      "description": "New user account registered (test_engineer_1793892854186@promptstudio.dev)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:34:14.313Z"
+    },
+    {
+      "_id": "act_1793891580346_ykvt",
+      "userId": "user_demo_id",
+      "type": "DELETE_PROMPT",
+      "description": "Deleted prompt \"Verification Prompt\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:13:00.346Z"
+    },
+    {
+      "_id": "act_1793891580340_gzd4",
+      "userId": "user_demo_id",
+      "type": "DELETE_COLLECTION",
+      "description": "Deleted collection \"Verif Col 1793891580305\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:13:00.340Z"
+    },
+    {
+      "_id": "act_1793891580325_fqgr",
+      "userId": "user_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Verification Prompt\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:13:00.325Z"
+    },
+    {
+      "_id": "act_1793891580317_iodt",
+      "userId": "user_demo_id",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"Verif Col 1793891580305\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:13:00.317Z"
+    },
+    {
+      "_id": "act_1793891580297_50x0",
+      "userId": "user_demo_id",
+      "type": "USER_LOGIN",
+      "description": "User logged in (demo@example.com)",
+      "metadata": {},
+      "createdAt": "2026-11-05T15:13:00.297Z"
+    },
+    {
+      "_id": "act_1793890314522_9vfn",
+      "userId": "user_demo_id",
+      "type": "DELETE_PROMPT",
+      "description": "Deleted prompt \"Audit Test Prompt 1793890314447\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.522Z"
+    },
+    {
+      "_id": "act_1793890314517_5exu",
+      "userId": "user_demo_id",
+      "type": "DELETE_COLLECTION",
+      "description": "Deleted collection \"Audit Collection 1793890314476\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.517Z"
+    },
+    {
+      "_id": "act_1793890314511_57hp",
+      "userId": "user_demo_id",
+      "type": "REMOVE_FROM_COLLECTION",
+      "description": "Removed prompt from \"Audit Collection 1793890314476\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.511Z"
+    },
+    {
+      "_id": "act_1793890314489_o9sk",
+      "userId": "user_demo_id",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"Audit Collection 1793890314476\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.489Z"
+    },
+    {
+      "_id": "act_1793890314481_fzyr",
+      "userId": "user_demo_id",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"Audit Collection 1793890314476\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.481Z"
+    },
+    {
+      "_id": "act_1793890314459_51oq",
+      "userId": "user_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Audit Test Prompt 1793890314447\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.459Z"
+    },
+    {
+      "_id": "act_1793890314422_tclf",
+      "userId": "user_demo_id",
+      "type": "USER_LOGIN",
+      "description": "User logged in (demo@example.com)",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:51:54.422Z"
+    },
+    {
+      "_id": "act_1793889558348_ekfs",
+      "userId": "user_demo_id",
+      "type": "DELETE_PROMPT",
+      "description": "Deleted prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.348Z"
+    },
+    {
+      "_id": "act_1793889558341_xgmt",
+      "userId": "user_demo_id",
+      "type": "DELETE_COLLECTION",
+      "description": "Deleted collection \"Updated Mobile Dev Prompts 1793889558279\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.341Z"
+    },
+    {
+      "_id": "act_1793889558333_sllo",
+      "userId": "user_demo_id",
+      "type": "UPDATE_COLLECTION",
+      "description": "Updated collection \"Updated Mobile Dev Prompts 1793889558279\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.333Z"
+    },
+    {
+      "_id": "act_1793889558328_0wfq",
+      "userId": "user_demo_id",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"Mobile Dev Prompts 1793889558279\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.328Z"
+    },
+    {
+      "_id": "act_1793889558324_key8",
+      "userId": "user_demo_id",
+      "type": "REMOVE_FROM_COLLECTION",
+      "description": "Removed prompt from \"Mobile Dev Prompts 1793889558279\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.324Z"
+    },
+    {
+      "_id": "act_1793889558316_7omw",
+      "userId": "user_demo_id",
+      "type": "TOGGLE_FAVORITE",
+      "description": "Starred prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.316Z"
+    },
+    {
+      "_id": "act_1793889558298_wby0",
+      "userId": "user_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.298Z"
+    },
+    {
+      "_id": "act_1793889558283_emh4",
+      "userId": "user_demo_id",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"Mobile Dev Prompts 1793889558279\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.283Z"
+    },
+    {
+      "_id": "act_1793889558259_r6ew",
+      "userId": "user_demo_id",
+      "type": "USER_LOGIN",
+      "description": "User logged in (demo@example.com)",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:18.259Z"
+    },
+    {
+      "_id": "act_1793889541162_0vtx",
+      "userId": "user_demo_id",
+      "type": "DELETE_PROMPT",
+      "description": "Deleted prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.162Z"
+    },
+    {
+      "_id": "act_1793889541145_7f6p",
+      "userId": "user_demo_id",
+      "type": "DELETE_COLLECTION",
+      "description": "Deleted collection \"Updated Mobile Dev Prompts 1793889541004\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.145Z"
+    },
+    {
+      "_id": "act_1793889541126_95d0",
+      "userId": "user_demo_id",
+      "type": "UPDATE_COLLECTION",
+      "description": "Updated collection \"Updated Mobile Dev Prompts 1793889541004\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.126Z"
+    },
+    {
+      "_id": "act_1793889541115_mc6e",
+      "userId": "user_demo_id",
+      "type": "ADD_TO_COLLECTION",
+      "description": "Added prompt to \"Mobile Dev Prompts 1793889541004\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.115Z"
+    },
+    {
+      "_id": "act_1793889541102_xeld",
+      "userId": "user_demo_id",
+      "type": "REMOVE_FROM_COLLECTION",
+      "description": "Removed prompt from \"Mobile Dev Prompts 1793889541004\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.102Z"
+    },
+    {
+      "_id": "act_1793889541082_k1n6",
+      "userId": "user_demo_id",
+      "type": "TOGGLE_FAVORITE",
+      "description": "Starred prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.082Z"
+    },
+    {
+      "_id": "act_1793889541038_wcuv",
+      "userId": "user_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"React Native Nav Stack\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.038Z"
+    },
+    {
+      "_id": "act_1793889541012_pw0g",
+      "userId": "user_demo_id",
+      "type": "CREATE_COLLECTION",
+      "description": "Created collection \"Mobile Dev Prompts 1793889541004\"",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:01.012Z"
+    },
+    {
+      "_id": "act_1793889540964_6nn0",
+      "userId": "user_demo_id",
+      "type": "USER_LOGIN",
+      "description": "User logged in (demo@example.com)",
+      "metadata": {},
+      "createdAt": "2026-11-05T14:39:00.964Z"
+    },
+    {
+      "_id": "act_1",
+      "userId": "user_demo_id",
+      "type": "USER_REGISTER",
+      "description": "User registered account (demo@example.com)",
+      "createdAt": "2026-10-29T14:36:45.126Z"
+    },
+    {
+      "_id": "act_2",
+      "userId": "user_demo_id",
+      "type": "CREATE_PROMPT",
+      "description": "Created prompt \"Explain Machine Learning to Beginner\"",
+      "createdAt": "2026-11-02T14:36:45.126Z"
+    },
+    {
+      "_id": "act_3",
+      "userId": "user_demo_id",
+      "type": "TEST_PROMPT",
+      "description": "Generated Gemini response for \"Python Array Sorting Function\"",
+      "createdAt": "2026-11-03T14:36:45.126Z"
+    }
+  ]
+}

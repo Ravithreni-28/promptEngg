@@ -1,117 +1,57 @@
 import API from './api';
 
-const STORAGE_KEY = 'ai_prompt_studio_collections';
-
-const DEFAULT_INITIAL_COLLECTIONS = [
-  { _id: 'col_1', name: 'Coding Prompts', description: 'Software development, algorithms, and refactoring prompts', color: '#3b82f6', icon: 'Code' },
-  { _id: 'col_2', name: 'Study & Learning', description: 'Educational summaries, quizzes, and course outlines', color: '#10b981', icon: 'BookOpen' },
-  { _id: 'col_3', name: 'Research Prompts', description: 'Academic analysis and paper summaries', color: '#8b5cf6', icon: 'Search' },
-  { _id: 'col_4', name: 'Professional Writing', description: 'Emails, proposals, and communication templates', color: '#f59e0b', icon: 'PenTool' },
-];
-
-const getLocalCollections = () => {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (!stored) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_INITIAL_COLLECTIONS));
-    return DEFAULT_INITIAL_COLLECTIONS;
-  }
-  try {
-    return JSON.parse(stored);
-  } catch (e) {
-    return DEFAULT_INITIAL_COLLECTIONS;
-  }
-};
-
-const setLocalCollections = (collections) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(collections));
-};
-
+// ─── Get All Collections (with real itemCounts from backend) ──────────────────
 export const getCollections = async () => {
-  let collections = [];
-  try {
-    const response = await API.get('/collections');
-    if (response.data?.success && Array.isArray(response.data?.collections)) {
-      collections = response.data.collections;
-    }
-  } catch (err) {
-    console.warn('[Collections API Warning]: Loading local state.');
+  const response = await API.get('/collections');
+  if (response.data?.success && Array.isArray(response.data?.collections)) {
+    return { success: true, collections: response.data.collections };
   }
-
-  if (!collections || collections.length === 0) {
-    collections = getLocalCollections();
-  } else {
-    setLocalCollections(collections);
-  }
-
-  // Count prompt items per collection
-  const storedPrompts = JSON.parse(localStorage.getItem('ai_prompt_studio_prompts') || '[]');
-
-  const colsWithCounts = collections.map((col) => {
-    const count = storedPrompts.filter(
-      (p) => String(p.collectionId) === String(col._id) || String(p.collectionId?._id) === String(col._id)
-    ).length;
-    return {
-      ...col,
-      itemCount: count,
-    };
-  });
-
-  return { success: true, collections: colsWithCounts };
+  return { success: false, collections: [] };
 };
 
+// ─── Get Collection By ID (with prompts) ─────────────────────────────────────
+export const getCollectionById = async (id) => {
+  try {
+    const response = await API.get(`/collections/${id}`);
+    return response.data;
+  } catch (err) {
+    return { success: false, collection: null };
+  }
+};
+
+// ─── Create Collection ────────────────────────────────────────────────────────
 export const createCollection = async (data) => {
-  let newCol = null;
-  try {
-    const response = await API.post('/collections', data);
-    if (response.data?.success) {
-      newCol = response.data.collection;
-    }
-  } catch (err) {
-    console.warn('[Create Collection API Warning]: Using local fallback.');
+  const response = await API.post('/collections', data);
+  if (response.data?.success && response.data?.collection) {
+    return { success: true, collection: response.data.collection };
   }
-
-  const collections = getLocalCollections();
-  const created = newCol || {
-    _id: 'col_' + Date.now(),
-    name: data.name,
-    description: data.description || '',
-    color: data.color || '#3b82f6',
-    icon: data.icon || 'Folder',
-    createdAt: new Date().toISOString(),
-  };
-
-  collections.unshift(created);
-  setLocalCollections(collections);
-  return { success: true, collection: { ...created, itemCount: 0 } };
+  throw new Error(response.data?.message || 'Failed to create collection.');
 };
 
+// ─── Update Collection ────────────────────────────────────────────────────────
 export const updateCollection = async (id, data) => {
-  try {
-    const response = await API.put(`/collections/${id}`, data);
-    if (response.data?.success) return response.data;
-  } catch (err) {
-    // fallback
-  }
-
-  const collections = getLocalCollections();
-  const idx = collections.findIndex((c) => c._id === id);
-  if (idx !== -1) {
-    collections[idx] = { ...collections[idx], ...data };
-    setLocalCollections(collections);
-    return { success: true, collection: collections[idx] };
-  }
-  return { success: false, message: 'Collection not found' };
+  const response = await API.put(`/collections/${id}`, data);
+  if (response.data?.success) return response.data;
+  throw new Error(response.data?.message || 'Failed to update collection.');
 };
 
+// ─── Delete Collection ────────────────────────────────────────────────────────
 export const deleteCollection = async (id) => {
-  try {
-    await API.delete(`/collections/${id}`);
-  } catch (err) {
-    // fallback
-  }
+  const response = await API.delete(`/collections/${id}`);
+  if (response.data?.success) return response.data;
+  throw new Error(response.data?.message || 'Failed to delete collection.');
+};
 
-  const collections = getLocalCollections();
-  const updated = collections.filter((c) => c._id !== id);
-  setLocalCollections(updated);
-  return { success: true, message: 'Collection deleted' };
+// ─── Add Prompt to Collection ─────────────────────────────────────────────────
+export const addPromptToCollection = async (collectionId, promptId) => {
+  const response = await API.post(`/collections/${collectionId}/prompts`, { promptId });
+  if (response.data?.success) return response.data;
+  throw new Error(response.data?.message || 'Failed to add prompt to collection.');
+};
+
+// ─── Remove Prompt from Collection ───────────────────────────────────────────
+export const removePromptFromCollection = async (collectionId, promptId) => {
+  const response = await API.delete(`/collections/${collectionId}/prompts/${promptId}`);
+  if (response.data?.success) return response.data;
+  throw new Error(response.data?.message || 'Failed to remove prompt from collection.');
 };

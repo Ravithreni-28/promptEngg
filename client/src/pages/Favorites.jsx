@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Star, Copy, Check, ExternalLink, Trash2 } from 'lucide-react';
+import { Star, Copy, Check, ExternalLink, Eye } from 'lucide-react';
 import { getPrompts, toggleFavorite } from '../services/promptService';
+import PromptDetailModal from '../components/PromptDetailModal';
 import { useToast } from '../context/ToastContext';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [copiedId, setCopiedId] = useState(null);
+  const [selectedDetailPrompt, setSelectedDetailPrompt] = useState(null);
 
   const { showToast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchFavorites();
+  }, []);
+
+  // Auto-refresh favorites when returning to this tab
+  useEffect(() => {
+    const onFocus = () => fetchFavorites();
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
   }, []);
 
   const fetchFavorites = async () => {
@@ -86,6 +95,14 @@ const Favorites = () => {
 
                 <div className="flex items-center gap-2">
                   <button
+                    onClick={() => setSelectedDetailPrompt(fav)}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
+                    title="View Full Details"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-indigo-400" />
+                    <span>Details</span>
+                  </button>
+                  <button
                     onClick={() => handleCopy(fav.originalPrompt, fav._id)}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors"
                   >
@@ -104,6 +121,19 @@ const Favorites = () => {
             </div>
           ))}
         </div>
+      )}
+
+      {/* Detail Modal */}
+      {selectedDetailPrompt && (
+        <PromptDetailModal
+          prompt={selectedDetailPrompt}
+          onClose={() => setSelectedDetailPrompt(null)}
+          onToggleFavorite={(id, isFav) => {
+            if (!isFav) {
+              setFavorites((prev) => prev.filter((p) => p._id !== id));
+            }
+          }}
+        />
       )}
     </div>
   );

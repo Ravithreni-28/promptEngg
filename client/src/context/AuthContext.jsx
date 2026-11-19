@@ -20,10 +20,8 @@ export const AuthProvider = ({ children }) => {
           }
         } catch (err) {
           console.warn('[Auth Check Failed]:', err.message);
-          // Keep token if demo mode fallback
-          if (!user) {
-            setUser({ id: 'demo_user', name: 'Demo Student', email: 'demo@example.com', role: 'user' });
-          }
+          // If token verification failed (expired or invalid), clear invalid token and log out cleanly
+          logoutUser();
         }
       }
       setLoading(false);
@@ -57,6 +55,13 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const updateUser = (updatedUser) => {
+    setUser((prev) => ({
+      ...prev,
+      ...updatedUser,
+    }));
+  };
+
   const value = {
     user,
     token,
@@ -66,6 +71,7 @@ export const AuthProvider = ({ children }) => {
     loginUser,
     registerUser,
     logoutUser,
+    updateUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

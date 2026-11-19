@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
   Wand2,
@@ -12,56 +12,63 @@ import {
   TrendingUp,
   PlusCircle,
 } from 'lucide-react';
-import { getPrompts } from '../services/promptService';
+import { getPrompts, getPromptStats } from '../services/promptService';
 import { useAuth } from '../context/AuthContext';
 
 const Dashboard = () => {
   const [prompts, setPrompts] = useState([]);
+  const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const { user } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchDashboardData();
-  }, []);
-
-  const fetchDashboardData = async () => {
+  const fetchDashboardData = useCallback(async () => {
+    setLoading(true);
     try {
-      const res = await getPrompts();
-      if (res.success) {
-        setPrompts(res.prompts || []);
+      // Fetch real stats from the backend stats endpoint
+      const statsRes = await getPromptStats();
+      if (statsRes.success && statsRes.stats) {
+        setStats(statsRes.stats);
+      }
+      // Fetch the actual list for recent / favorites display
+      const promptsRes = await getPrompts();
+      if (promptsRes.success) {
+        setPrompts(promptsRes.prompts || []);
       }
     } catch (err) {
       console.warn('[Dashboard Load Warning]:', err.message);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const totalPrompts = prompts.length;
-  const testedPrompts = prompts.filter((p) => p.responses && p.responses.length > 0).length;
+  useEffect(() => {
+    fetchDashboardData();
+  }, [fetchDashboardData]);
+
+  // Re-fetch when window regains focus (user navigates back from Studio)
+  useEffect(() => {
+    const onFocus = () => fetchDashboardData();
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, [fetchDashboardData]);
+
+  // Use backend stats when available, fall back to local computation
+  const totalPrompts = stats?.totalPrompts ?? prompts.length;
+  const testedPrompts = stats?.testedPrompts ?? prompts.filter((p) => p.responses && p.responses.length > 0).length;
+  const avgPromptScore = stats?.avgPromptScore ?? (() => {
+    const scores = prompts.map((p) => p.finalScore || p.promptScores?.overall || 0).filter((s) => s > 0);
+    return scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0;
+  })();
+  const mostUsedTechnique = stats?.mostUsedTechnique ?? (() => {
+    const counts = {};
+    prompts.forEach((p) => { if (p.technique) counts[p.technique] = (counts[p.technique] || 0) + 1; });
+    let top = 'N/A'; let max = 0;
+    Object.entries(counts).forEach(([t, c]) => { if (c > max) { max = c; top = t; } });
+    return top;
+  })();
+
   const favoritePrompts = prompts.filter((p) => p.favorite);
-
-  const promptScores = prompts.map((p) => p.promptScores?.overall || 0).filter((s) => s > 0);
-  const avgPromptScore = promptScores.length > 0 ? Math.round(promptScores.reduce((a, b) => a + b, 0) / promptScores.length) : 84;
-
-  const responseScores = prompts.flatMap((p) => (p.responses || []).map((r) => r.scores?.overall || 0)).filter((s) => s > 0);
-  const avgResponseScore = responseScores.length > 0 ? Math.round(responseScores.reduce((a, b) => a + b, 0) / responseScores.length) : 88;
-
-  // Most-used technique
-  const techCounts = {};
-  prompts.forEach((p) => {
-    const t = p.technique || 'Role-Based';
-    techCounts[t] = (techCounts[t] || 0) + 1;
-  });
-  let mostUsedTechnique = 'Role-Based';
-  let maxCount = 0;
-  Object.entries(techCounts).forEach(([t, count]) => {
-    if (count > maxCount) {
-      maxCount = count;
-      mostUsedTechnique = t;
-    }
-  });
 
   return (
     <div className="space-y-8 animate-fade-in">

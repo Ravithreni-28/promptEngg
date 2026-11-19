@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   Wand2,
@@ -47,6 +47,7 @@ const PromptStudio = () => {
   // Collections & Saved ID State
   const [collections, setCollections] = useState([]);
   const [savedPromptId, setSavedPromptId] = useState(null);
+  const savedPromptIdRef = useRef(null);
   const [isFavorite, setIsFavorite] = useState(false);
 
   // Results State
@@ -54,6 +55,7 @@ const PromptStudio = () => {
   const [variations, setVariations] = useState([]);
   const [selectedVariation, setSelectedVariation] = useState(null);
   const [aiResponse, setAiResponse] = useState(null);
+  const [testedResponses, setTestedResponses] = useState({});
   const [comparisonData, setComparisonData] = useState(null);
 
   // Loading States
@@ -77,8 +79,35 @@ const PromptStudio = () => {
       setCreativityLevel(p.creativityLevel || 'Balanced');
       if (p.promptScores) setPromptScores(p.promptScores);
       if (p.variations) setVariations(p.variations);
-      if (p._id) setSavedPromptId(p._id);
+      if (p._id) {
+        setSavedPromptId(p._id);
+        savedPromptIdRef.current = p._id;
+      }
       setIsFavorite(!!p.favorite);
+
+      // Restore collection assignment
+      if (p.collectionId) {
+        const cId = typeof p.collectionId === 'object' ? p.collectionId._id : p.collectionId;
+        setSelectedCollection(cId || '');
+      }
+
+      // Restore AI responses and tested responses map
+      if (p.responses && p.responses.length > 0) {
+        setAiResponse(p.responses[0]);
+        const respMap = {};
+        p.responses.forEach((r) => {
+          if (r.technique) respMap[r.technique] = r;
+        });
+        setTestedResponses(respMap);
+      }
+
+      // Restore comparison data
+      if (p.recommendedPrompt) {
+        setComparisonData({
+          recommendedPrompt: p.recommendedPrompt,
+          items: p.responses || [],
+        });
+      }
     }
   }, [location.state]);
 
@@ -141,11 +170,11 @@ const PromptStudio = () => {
     showToast(`Applied preset: ${preset.title}`, 'info');
   };
 
-  // 1. Analyze Prompt
+  // 1. Analyze Prompt — auto-persists to history after scoring
   const handleAnalyze = async () => {
     if (!prompt.trim() && !task.trim()) {
       showToast('Please enter a prompt or task before analyzing.', 'error');
-      return;
+      return null;
     }
 
     setAnalyzing(true);
@@ -161,12 +190,42 @@ const PromptStudio = () => {
       if (res.success) {
         setPromptScores(res.scores);
         showToast('Prompt analysis complete!', 'success');
+
+        // Auto-save (or update) in history so it appears immediately
+        try {
+          const currentId = savedPromptIdRef.current || savedPromptId;
+          const savePayload = {
+            ...(currentId ? { _id: currentId } : {}),
+            title: task ? task.substring(0, 30) : prompt.substring(0, 30),
+            originalPrompt: prompt.trim() || task.trim(),
+            task,
+            context,
+            desiredOutputFormat,
+            tone,
+            targetAudience,
+            creativityLevel,
+            promptScores: res.scores,
+            technique: 'Standard',
+            finalScore: res.scores?.overall || 75,
+            favorite: isFavorite,
+            collectionId: selectedCollection || null,
+          };
+          const saveRes = await apiSavePrompt(savePayload);
+          if (saveRes.success && saveRes.prompt?._id) {
+            savedPromptIdRef.current = saveRes.prompt._id;
+            setSavedPromptId(saveRes.prompt._id);
+          }
+        } catch (saveErr) {
+          console.warn('[Auto-save after analyze failed]:', saveErr.message);
+        }
+        return res.scores;
       }
     } catch (err) {
       showToast('Failed to analyze prompt.', 'error');
     } finally {
       setAnalyzing(false);
     }
+    return null;
   };
 
   // 2. Optimize Prompt (Generate 5 Variations via Gemini)
@@ -178,8 +237,8 @@ const PromptStudio = () => {
 
     setOptimizing(true);
     try {
-      // First run local heuristic analysis
-      await handleAnalyze();
+      // First run heuristic analysis (also auto-saves the base record)
+      const scores = await handleAnalyze();
 
       const res = await apiOptimize({
         prompt,
@@ -193,6 +252,36 @@ const PromptStudio = () => {
       if (res.success && res.variations) {
         setVariations(res.variations);
         showToast('Generated 5 optimized prompt variations using Gemini!', 'success');
+
+        // Update the saved record with the generated variations
+        try {
+          const currentScores = scores || promptScores;
+          const currentId = savedPromptIdRef.current || savedPromptId;
+          const savePayload = {
+            ...(currentId ? { _id: currentId } : {}),
+            title: task ? task.substring(0, 30) : prompt.substring(0, 30),
+            originalPrompt: prompt.trim() || task.trim(),
+            task,
+            context,
+            desiredOutputFormat,
+            tone,
+            targetAudience,
+            creativityLevel,
+            promptScores: currentScores || {},
+            variations: res.variations,
+            technique: res.variations[0]?.technique || 'Standard',
+            finalScore: currentScores?.overall || 75,
+            favorite: isFavorite,
+            collectionId: selectedCollection || null,
+          };
+          const saveRes = await apiSavePrompt(savePayload);
+          if (saveRes.success && saveRes.prompt?._id) {
+            savedPromptIdRef.current = saveRes.prompt._id;
+            setSavedPromptId(saveRes.prompt._id);
+          }
+        } catch (saveErr) {
+          console.warn('[Auto-save after optimize failed]:', saveErr.message);
+        }
       }
     } catch (err) {
       showToast(err.message || 'Failed to generate variations.', 'error');
@@ -202,8 +291,10 @@ const PromptStudio = () => {
   };
 
   // 3. Generate AI Response from Gemini
-  const handleGenerateResponse = async (targetText) => {
-    const textToSend = targetText || (selectedVariation ? selectedVariation.optimizedPrompt : prompt);
+  const handleGenerateResponse = async (targetText, targetVariation = null) => {
+    const activeVar = targetVariation || selectedVariation;
+    const textToSend = targetText || (activeVar ? activeVar.optimizedPrompt : prompt);
+    const technique = activeVar ? activeVar.technique : 'Original Prompt';
 
     if (!textToSend.trim()) {
       showToast('Please select or enter a prompt first.', 'error');
@@ -214,11 +305,55 @@ const PromptStudio = () => {
     try {
       const res = await apiGenerate(textToSend);
       if (res.success && res.result) {
-        setAiResponse(res.result);
-        showToast('AI response generated successfully!', 'success');
+        const enrichedResult = {
+          ...res.result,
+          technique,
+          promptText: textToSend,
+        };
+        setAiResponse(enrichedResult);
+
+        const updatedTested = {
+          ...testedResponses,
+          [technique]: enrichedResult,
+        };
+        setTestedResponses(updatedTested);
+
+        showToast(`AI response generated for "${technique}"!`, 'success');
 
         // Automatically trigger comparison evaluation
-        runComparisonEvaluation(textToSend, res.result);
+        runComparisonEvaluation(textToSend, enrichedResult, updatedTested);
+
+        // Auto-save the newly generated response to history
+        try {
+          const currentId = savedPromptIdRef.current || savedPromptId;
+          const allResponsesList = Object.values(updatedTested);
+          const savePayload = {
+            ...(currentId ? { _id: currentId } : {}),
+            title: task ? task.substring(0, 30) : prompt.substring(0, 30),
+            originalPrompt: prompt.trim() || task.trim(),
+            task,
+            context,
+            desiredOutputFormat,
+            tone,
+            targetAudience,
+            creativityLevel,
+            promptScores,
+            variations,
+            selectedPrompt: activeVar ? activeVar.optimizedPrompt : prompt,
+            technique,
+            responses: allResponsesList,
+            responseScores: enrichedResult.scores || {},
+            favorite: isFavorite,
+            collectionId: selectedCollection || null,
+          };
+          const saveRes = await apiSavePrompt(savePayload);
+          if (saveRes.success && saveRes.prompt?._id) {
+            savedPromptIdRef.current = saveRes.prompt._id;
+            setSavedPromptId(saveRes.prompt._id);
+          }
+        } catch (saveErr) {
+          console.warn('[Auto-save after response failed]:', saveErr.message);
+        }
       }
     } catch (err) {
       showToast(err.message || 'Failed to connect to Gemini.', 'error');
@@ -228,24 +363,26 @@ const PromptStudio = () => {
   };
 
   // 4. Run Comparison & Recommendation Engine
-  const runComparisonEvaluation = async (activePromptText, activeResponse) => {
+  const runComparisonEvaluation = async (activePromptText, activeResponse, currentTested = testedResponses) => {
     setComparing(true);
     try {
+      const activeTech = selectedVariation ? selectedVariation.technique : 'Original Prompt';
       const itemsToCompare = [
         {
-          technique: selectedVariation ? selectedVariation.technique : 'Original Prompt',
+          technique: activeTech,
           promptText: activePromptText,
           responseText: activeResponse.responseText,
         },
       ];
 
-      // Add other variations to comparative score check
+      // Add all variations to comparative score check
       variations.forEach((v) => {
         if (v.optimizedPrompt !== activePromptText) {
+          const varTested = currentTested[v.technique];
           itemsToCompare.push({
             technique: v.technique,
             promptText: v.optimizedPrompt,
-            responseText: activeResponse.responseText, // evaluate against generated context
+            responseText: varTested ? varTested.responseText : activeResponse.responseText,
           });
         }
       });
@@ -253,6 +390,23 @@ const PromptStudio = () => {
       const compRes = await apiCompare(itemsToCompare);
       if (compRes.success && compRes.comparison) {
         setComparisonData(compRes.comparison);
+
+        // Auto-save comparison recommendation and best prompt
+        try {
+          const currentId = savedPromptIdRef.current || savedPromptId;
+          const savePayload = {
+            ...(currentId ? { _id: currentId } : {}),
+            recommendedPrompt: compRes.comparison.recommendedPrompt,
+            finalScore: compRes.comparison.recommendedPrompt?.finalScore || promptScores?.overall || 75,
+          };
+          const saveRes = await apiSavePrompt(savePayload);
+          if (saveRes.success && saveRes.prompt?._id) {
+            savedPromptIdRef.current = saveRes.prompt._id;
+            setSavedPromptId(saveRes.prompt._id);
+          }
+        } catch (saveErr) {
+          console.warn('[Auto-save after compare failed]:', saveErr.message);
+        }
       }
     } catch (err) {
       console.warn('[Comparison Error]:', err.message);
@@ -270,9 +424,17 @@ const PromptStudio = () => {
 
     setSaving(true);
     try {
+      const allResponsesList = Object.values(testedResponses);
+      if (aiResponse && !allResponsesList.some((r) => r.responseText === aiResponse.responseText)) {
+        allResponsesList.push(aiResponse);
+      }
+
+      const currentId = savedPromptIdRef.current || savedPromptId;
       const payload = {
+        // Include _id if we already auto-saved this session — backend will upsert
+        ...(currentId ? { _id: currentId } : {}),
         title: task ? task.substring(0, 30) : prompt.substring(0, 30),
-        originalPrompt: prompt,
+        originalPrompt: prompt.trim() || task.trim(),
         task,
         context,
         desiredOutputFormat,
@@ -282,8 +444,8 @@ const PromptStudio = () => {
         promptScores,
         variations,
         selectedPrompt: selectedVariation ? selectedVariation.optimizedPrompt : prompt,
-        technique: selectedVariation ? selectedVariation.technique : 'Standard',
-        responses: aiResponse ? [aiResponse] : [],
+        technique: selectedVariation ? selectedVariation.technique : (variations[0]?.technique || 'Standard'),
+        responses: allResponsesList.length > 0 ? allResponsesList : aiResponse ? [aiResponse] : [],
         responseScores: aiResponse?.scores || {},
         recommendedPrompt: comparisonData?.recommendedPrompt || {},
         finalScore: comparisonData?.recommendedPrompt?.finalScore || promptScores?.overall || 75,
@@ -293,6 +455,7 @@ const PromptStudio = () => {
 
       const res = await apiSavePrompt(payload);
       if (res.success) {
+        savedPromptIdRef.current = res.prompt._id;
         setSavedPromptId(res.prompt._id);
         showToast('Prompt saved to history and collection!', 'success');
       }
@@ -314,8 +477,10 @@ const PromptStudio = () => {
     setVariations([]);
     setSelectedVariation(null);
     setAiResponse(null);
+    setTestedResponses({});
     setComparisonData(null);
     setSavedPromptId(null);
+    savedPromptIdRef.current = null;
     showToast('Workspace cleared.', 'info');
   };
 
@@ -487,23 +652,21 @@ const PromptStudio = () => {
             </div>
 
             {/* Collection Assign */}
-            {collections.length > 0 && (
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Save to Collection</label>
-                <select
-                  value={selectedCollection}
-                  onChange={(e) => setSelectedCollection(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-slate-200 text-xs focus:outline-none focus:border-indigo-500"
-                >
-                  <option value="">No Collection (Default)</option>
-                  {collections.map((col) => (
-                    <option key={col._id} value={col._id}>
-                      📁 {col.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
+            <div>
+              <label className="block text-xs font-semibold text-slate-300 mb-1">Save to Collection</label>
+              <select
+                value={selectedCollection}
+                onChange={(e) => setSelectedCollection(e.target.value)}
+                className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-slate-200 text-xs focus:outline-none focus:border-indigo-500"
+              >
+                <option value="">No Collection (Default)</option>
+                {collections.map((col) => (
+                  <option key={col._id} value={col._id}>
+                    📁 {col.name}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             {/* Action Bar */}
             <div className="pt-3 border-t border-slate-800 flex flex-wrap items-center gap-3">
@@ -576,7 +739,7 @@ const PromptStudio = () => {
                 isSelected={selectedVariation?.technique === variation.technique}
                 onSelectForTesting={(v) => {
                   setSelectedVariation(v);
-                  handleGenerateResponse(v.optimizedPrompt);
+                  handleGenerateResponse(v.optimizedPrompt, v);
                 }}
               />
             ))}

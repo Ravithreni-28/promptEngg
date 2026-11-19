@@ -21,10 +21,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Security & Utility Middlewares
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: true,
     credentials: true,
   })
 );
@@ -35,7 +35,8 @@ app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 // Rate Limiter
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 200, // Limit each IP to 200 requests per window
+  max: process.env.NODE_ENV === 'production' ? 500 : 10000, // Generous limit for development & testing
+  validate: { default: false, ip: false },
   message: { success: false, message: 'Too many requests from this IP, please try again later.' },
 });
 app.use('/api/', apiLimiter);
@@ -64,10 +65,14 @@ app.use('/api/admin', adminRoutes);
 // Global Error Handler
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 AI PROMPT STUDIO SERVER RUNNING ON PORT ${PORT}`);
-  console.log(`👉 API Base: http://localhost:${PORT}/api`);
-  console.log(`👉 Gemini Model: ${process.env.GEMINI_MODEL || 'gemini-2.5-flash'}`);
-  console.log(`====================================================`);
-});
+if (require.main === module) {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`====================================================`);
+    console.log(`🚀 AI PROMPT STUDIO SERVER RUNNING ON PORT ${PORT}`);
+    console.log(`👉 API Base: http://localhost:${PORT}/api`);
+    console.log(`👉 Gemini Model: ${process.env.GEMINI_MODEL || 'gemini-2.5-flash'}`);
+    console.log(`====================================================`);
+  });
+}
+
+module.exports = app;

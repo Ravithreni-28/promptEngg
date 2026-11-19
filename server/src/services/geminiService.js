@@ -1,8 +1,9 @@
 const { GoogleGenAI } = require('@google/genai');
 
 /**
- * Gemini Service using the current official @google/genai SDK
- * API Key is strictly maintained in backend environment variables.
+ * Gemini Service using the official @google/genai SDK
+ * API Key is strictly maintained in backend environment variables (.env).
+ * Frontend never accesses or receives the API Key.
  */
 
 const getGeminiClient = () => {
@@ -35,7 +36,7 @@ const generatePromptVariations = async (prompt, options = {}) => {
   const { context = '', task = '', desiredOutputFormat = '', tone = '', targetAudience = '' } = options;
 
   if (!ai) {
-    console.warn('[Gemini Service] GEMINI_API_KEY is missing or invalid. Returning structured fallback variations.');
+    console.warn('[Gemini Service] GEMINI_API_KEY is not configured in server/.env. Using structured fallback variations.');
     return getFallbackVariations(prompt, options);
   }
 
@@ -91,8 +92,8 @@ const generateAIResponse = async (promptText) => {
 
   if (!ai) {
     return {
-      responseText: `[Demo Mode / API Key Required]\n\nYour prompt:\n"${promptText}"\n\nTo generate live AI responses from Google Gemini:\n1. Open server/.env\n2. Add your GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nHere is a mock response demonstrating the response evaluation and comparison feature.`,
-      model: `${modelName} (Demo Mode)`,
+      responseText: `[Notice: GEMINI_API_KEY not configured in backend server/.env]\n\nYour prompt:\n"${promptText}"\n\nTo enable live responses from Google Gemini:\n1. Open file: server/.env\n2. Set GEMINI_API_KEY=your_key_here\n3. Restart the server.\n\nDemonstration AI response output:\nThe prompt was received and processed through the AI Prompt Studio pipeline. Heuristic response evaluation and weighted comparison scoring have been executed below.`,
+      model: `${modelName} (Demo / Key Required)`,
       timestamp: new Date().toISOString(),
       isDemo: true,
     };
@@ -115,6 +116,48 @@ const generateAIResponse = async (promptText) => {
   } catch (err) {
     console.error('[Gemini API Error - Generate]:', err.message);
     throw new Error(`Gemini API Error: ${err.message}`);
+  }
+};
+
+/**
+ * Generate intelligent improvement suggestions using Gemini when API key is available
+ */
+const generateGeminiSuggestions = async (prompt, currentScores = {}) => {
+  const ai = getGeminiClient();
+  const modelName = getModelName();
+
+  if (!ai) return null;
+
+  try {
+    const promptReq = `You are a Senior Prompt Engineer. Review this user prompt:
+"${prompt}"
+
+Current heuristic scores:
+- Clarity: ${currentScores.clarity || 'N/A'}/20
+- Specificity: ${currentScores.specificity || 'N/A'}/20
+- Context: ${currentScores.context || 'N/A'}/20
+- Completeness: ${currentScores.completeness || 'N/A'}/20
+- Structure: ${currentScores.structure || 'N/A'}/20
+Overall: ${currentScores.overall || 'N/A'}/100
+
+Provide exactly 3 concise, highly actionable suggestions to elevate the quality of this prompt.
+Return ONLY a valid JSON array of 3 strings. Example: ["Specify the exact programming language version.", "Include positive and negative examples.", "Format the output as a Markdown table."]
+No code fence ticks or surrounding text.`;
+
+    const response = await ai.models.generateContent({
+      model: modelName,
+      contents: promptReq,
+    });
+
+    const clean = (response.text || '').replace(/```json/gi, '').replace(/```/g, '').trim();
+    const suggestions = JSON.parse(clean);
+    if (Array.isArray(suggestions) && suggestions.length > 0) {
+      return suggestions;
+    }
+    return null;
+  } catch (err) {
+    console.warn('[Gemini Suggestions Warning]:', err.message);
+    return null;
   }
 };
 
@@ -162,4 +205,5 @@ const getFallbackVariations = (prompt, options = {}) => {
 module.exports = {
   generatePromptVariations,
   generateAIResponse,
+  generateGeminiSuggestions,
 };

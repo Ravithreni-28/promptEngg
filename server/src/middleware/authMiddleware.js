@@ -29,9 +29,9 @@ const protect = async (req, res, next) => {
     }
 
     req.user = {
-      _id: decoded.id || 'demo_user_id',
-      name: decoded.name || 'Demo User',
-      email: decoded.email || 'user@example.com',
+      _id: decoded.id || 'user_demo_id',
+      name: decoded.name || 'Demo Student',
+      email: decoded.email || 'demo@example.com',
       role: decoded.role || 'user',
     };
     next();

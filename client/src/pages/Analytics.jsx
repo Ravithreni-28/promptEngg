@@ -24,6 +24,13 @@ const Analytics = () => {
     fetchAnalytics();
   }, []);
 
+  // Auto-refresh analytics when returning to this tab
+  useEffect(() => {
+    const onFocus = () => fetchAnalytics();
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, []);
+
   const fetchAnalytics = async () => {
     try {
       // 1. Try backend API first
