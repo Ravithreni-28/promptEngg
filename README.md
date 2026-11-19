@@ -193,6 +193,4 @@ npm run client
 
 ---
 
-## 📜 License & Authors
-- **Project**: AI Prompt Studio (B.Tech Capstone Project)
-- **Built by**: Senior Full-Stack Engineering Team
+
